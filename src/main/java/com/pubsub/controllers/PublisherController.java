@@ -24,6 +24,7 @@ public class PublisherController {
     public Route publishEvent = (Request req, Response res) -> {
         String topic = req.params(":topic");
         String jsonBody = req.body();
+        res.type("application/json");
 
         // Parse the JSON body into an Event object
         Event event = Event.fromJson(jsonBody);

@@ -58,7 +58,7 @@ public class SubscriberService {
             subscriber.subscribeToTopic(topic, iterator);
             response = new APIResponse(
                     "success",
-                    String.format("topic %s subscribe", topic),
+                    String.format("topic %s subscribed", topic),
                     null);
         }
         session.getRemote().sendString(response.toJson());
@@ -81,7 +81,7 @@ public class SubscriberService {
         } else {
             response = new APIResponse(
                     "success",
-                    String.format("topic %s unsubscribe", topic),
+                    String.format("topic %s unsubscribed", topic),
                     null);
         }
         session.getRemote().sendString(response.toJson());
